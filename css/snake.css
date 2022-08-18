@@ -1,0 +1,70 @@
+#app {
+    margin: auto;
+    overflow: auto;
+    border: 3px solid red;
+    border-radius: 3px;
+}
+
+#dash {
+    width: 100%;
+    overflow: auto;
+    margin: 3px;
+    border: 1px solid red;
+}
+
+#game {
+    margin: auto;
+    overflow: auto;
+    border: 1px solid red;
+    border-radius: 1px;
+    margin: 3px;
+}
+
+.square {
+    margin: 1px;
+    float: left;
+    background-color: rgb(239, 236, 236);
+    border: 1px solid rgb(246, 241, 241);
+}
+
+.snake {
+    margin: 1px;
+    float: left;
+    background-color: rgb(123, 114, 114);
+    border: 1px solid rgb(125, 118, 118);
+}
+
+.snakeHead {
+    margin: 1px;
+    float: left;
+    background-color: rgb(231, 95, 95);
+    border: 1px solid rgb(231, 95, 95);
+}
+
+.food1 {
+    margin: 1px;
+    float: left;
+    background-color: rgb(229, 14, 14);
+    border: 1px solid rgb(239, 8, 8);
+}
+
+.food2 {
+    margin: 1px;
+    float: left;
+    background-color: rgb(14, 229, 53);
+    border: 1px solid rgb(8, 239, 89);
+}
+
+.food3 {
+    margin: 1px;
+    float: left;
+    background-color: rgb(166, 12, 180);
+    border: 1px solid rgb(172, 12, 162);
+}
+
+.food4 {
+    margin: 1px;
+    float: left;
+    background-color: rgba(229, 143, 14, 0.943);
+    border: 1px solid rgb(226, 131, 6);
+}
