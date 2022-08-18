@@ -75,6 +75,8 @@ class Snake {
         this.liveFlag = false;
         clearInterval(this.moveTimer);
         clearInterval(this.flashTimer);
+        $("#game").css("display", "none");
+        $("#over").css("display", "block");
     }
     meetFood(pos) {
         return pos == this.client.foodPosition;
@@ -174,16 +176,19 @@ class GameCient {
         new Food(newPos, newColor, this);
     }
     initUI(appWidth) {
-        $("#app").css('width', appWidth + 8 + 'px');
-        $("#dash").css('width', appWidth + 'px');
-        $("#game").css('width', appWidth + 'px');
+        $("#app").css("width", appWidth + 8 + "px");
+        $("#dash").css("width", appWidth + "px");
+        $("#game").css("width", appWidth + "px");
+        $("#over").css("height", appWidth + "px");
+        $("#over").css("lineHeight", appWidth - 35 + "px");
         for (var i = 0; i < this.totalNum; i++) {
             let square = $("<div id='s" + i + "' class='square' style='width:" + this.squareSize + "px;height:" + this.squareSize + "px'></div>");
             $("#game").append(square);
         }
+        let temp = $("#game").css("height");
     }
 }
 
 $(function() {
-    new GameCient(6, 40);
+    new GameCient(6, 30);
 })

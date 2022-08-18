@@ -20,6 +20,16 @@
     margin: 3px;
 }
 
+.game {
+    margin: auto;
+    text-align: center;
+    overflow: auto;
+    border: 1px solid red;
+    border-radius: 1px;
+    margin: 3px;
+    display: none;
+}
+
 .square {
     margin: 1px;
     float: left;
