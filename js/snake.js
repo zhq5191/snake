@@ -41,6 +41,7 @@ class Snake {
     static LEFT = 3;
     static RIGHT = 4;
     constructor(len, pos, dir, client) {
+        this.speed = 300;
         this.paused = false;
         this.flashTimeDuration = 70;
         this.liveFlag = true;
@@ -55,7 +56,7 @@ class Snake {
         }, 100);
         this.moveTimer = setInterval(function() {
             self.move();
-        }, 300);
+        }, this.speed);
     }
     pause() {
         if (this.paused) {
@@ -118,6 +119,9 @@ class Snake {
     }
     handleEvent(e) {
         if (this.paused) return;
+        // 防止快速连续点击
+        if (typeof(this.hitStamp) != 'undefined' && (new Date()).valueOf() - this.hitStamp < Math.floor(this.speed * 2 / 3)) return;
+        this.hitStamp = (new Date()).valueOf();
         switch (e.keyCode) {
             case 37:
                 this.dir != 4 && (this.dir = 3)
