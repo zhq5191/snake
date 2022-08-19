@@ -94,7 +94,7 @@ class Snake {
         let nextHead = -1;
         let topSide = this.dir == Snake.UP && (nextHead = this.data[0] - this.client.rowNum) && nextHead < 0;
         let bottomSide = this.dir == Snake.DOWN && (nextHead = this.data[0] + this.client.rowNum) && nextHead > this.client.totalNum;
-        let leftSide = this.dir == Snake.LEFT && (nextHead = this.data[0] - 1) && nextHead % this.client.rowNum == 0;
+        let leftSide = this.dir == Snake.LEFT && (nextHead = this.data[0] - 1) && this.data[0] % this.client.rowNum == 0;
         let rightSide = this.dir == Snake.RIGHT && (nextHead = this.data[0] + 1) && nextHead % this.client.rowNum == 0;
         let hitSelf = this.data.includes(nextHead);
         if (topSide || bottomSide || leftSide || rightSide || hitSelf) {
