@@ -145,7 +145,8 @@ class GameCient {
         this.appWidth = (squareSize + 4) * squareNumPerRow;
         // 初始化界面
         this.initUI(this.appWidth);
-        this.snake = new Snake(2, this.totalNum / 2 + squareNumPerRow / 2, Snake.LEFT, this);
+        let firstPos = Math.floor(squareNumPerRow / 2) + Math.floor(squareNumPerRow / 2) * squareNumPerRow;
+        this.snake = new Snake(2, firstPos, Snake.LEFT, this);
         this.changeFoodPos();
         this.controller = new Controller(this.snake);
         let self = this;
@@ -190,5 +191,5 @@ class GameCient {
 }
 
 $(function() {
-    new GameCient(6, 30);
+    new GameCient(6, 35);
 })
