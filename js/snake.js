@@ -117,6 +117,7 @@ class Snake {
         }
     }
     handleEvent(e) {
+        if (this.paused) return;
         switch (e.keyCode) {
             case 37:
                 this.dir != 4 && (this.dir = 3)
